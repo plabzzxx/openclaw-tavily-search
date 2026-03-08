@@ -4,9 +4,13 @@ A practical Tavily skill for OpenClaw with **search / extract / crawl / map** in
 
 一个面向 OpenClaw 的 Tavily 实用技能包，统一支持 **search / extract / crawl / map**。
 
+Only **2 steps** to get started: fast and beginner-friendly.
+
+只要 **2 个步骤**即可完成：简单、快捷、新手友好。
+
 ---
 
-## Install / 安装
+## Step 1: Install / 安装
 
 ### Recommended one-shot prompt for beginners / 新手推荐一键提示词
 
@@ -49,7 +53,7 @@ git clone https://github.com/plabzzxx/openclaw-tavily-search tavily-search
 
 ---
 
-## Setup API Key / 配置 API Key
+## Step 2: Setup API Key / 配置 API Key
 
 Step 1: Get a Tavily API key from the official website: https://tavily.com
 
