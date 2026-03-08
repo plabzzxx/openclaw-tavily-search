@@ -1,8 +1,8 @@
 # Tavily Search Toolkit for OpenClaw
 
-A practical Tavily skill for OpenClaw with **search / extract / crawl / map** in one script.
+Make OpenClaw web-connected in real time (with a practical free-tier path via Tavily), in one install.
 
-一个面向 OpenClaw 的 Tavily 实用技能包，统一支持 **search / extract / crawl / map**。
+让 OpenClaw 立刻具备实时联网能力（Tavily 通常有免费额度可用），一次安装即可上手。
 
 Only **1 step** to start: send one prompt to OpenClaw, then follow guided onboarding.
 
@@ -70,3 +70,39 @@ node scripts/tavily_search.mjs extract --urls https://docs.openclaw.ai --content
 node scripts/tavily_search.mjs crawl --url docs.tavily.com --max-depth 2 --limit 30 --format md
 node scripts/tavily_search.mjs map --url docs.openclaw.ai --max-depth 2 --limit 40 --format md
 ```
+
+## Capability overview / 能力总览
+
+- `search`: fast web lookup with domain/time filters and stable JSON output.
+- `extract`: fetch clean page content from one or multiple URLs.
+- `crawl`: recursively crawl a site with depth/breadth controls.
+- `map`: discover site structure and URL graph quickly.
+
+- `search`：快速联网搜索，支持域名/时间过滤，输出结构稳定。
+- `extract`：从单个或多个 URL 抽取清洗后的正文。
+- `crawl`：按深度/广度递归抓站，适合文档站和知识库。
+- `map`：快速建立站点结构和 URL 图谱。
+
+## Natural language examples / 自然语言触发示例
+
+- "Search latest OpenClaw multi-agent deployment practices and give me 5 links."
+- “搜 OpenClaw 多智能体部署最佳实践，给我 5 条链接。”
+
+- "Search Chow Tai Fook and keep only official domains."
+- “搜周大福，只保留官网域名结果。”
+
+- "Extract this URL and summarize into 5 bullets."
+- “把这个链接抽取正文并总结成 5 条要点。”
+
+- "Crawl this docs website with depth 2 and output markdown digest."
+- “爬这个文档站（深度2），输出 markdown 摘要。”
+
+## Basic vs Advanced / 基础模式与进阶模式
+
+For most users, **search** is enough for daily web lookup.
+
+对大多数用户来说，日常联网查询用 **search** 就足够。
+
+Use **extract/crawl/map** when you need structured website intelligence or deeper research.
+
+只有在需要结构化网站情报或深度调研时，再使用 **extract/crawl/map**。
