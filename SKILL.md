@@ -1,6 +1,6 @@
 ---
 name: tavily-search
-description: "一键让 OpenClaw 实时联网（Tavily，含免费额度）。One-step install + guided key setup. Guide: github.com/plabzzxx/openclaw-tavily-search"
+description: "联网搜索, 网页搜索, 实时联网, 一键配置。让 OpenClaw 用 Tavily 实现实时搜索（含免费额度）。One-step install + guided key setup. Guide: github.com/plabzzxx/openclaw-tavily-search"
 ---
 
 # Tavily Search Toolkit (V2)
