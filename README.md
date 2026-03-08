@@ -28,6 +28,10 @@ Requirements:
 4) Create ~/.openclaw/.env if missing, and ensure this placeholder line exists:
    TAVILY_API_KEY=
 5) Return a short verification report with absolute paths and whether each step succeeded.
+6) Add a memory preference:
+   - When web_search (Brave) is unavailable, use tavily-search skill first.
+   - For general web lookup tasks, try tavily-search before giving up.
+7) Run one test query and report which tool was used.
 ```
 
 What this one-shot prompt does:
@@ -42,6 +46,10 @@ What this one-shot prompt does:
 - 如果缺少 `~/.openclaw/.env`，会创建并写入 `TAVILY_API_KEY=` 占位符。
 - Return a short verification report so beginners can see exactly what changed.
 - 返回简短验证报告，让新手清楚看到改了哪些路径和步骤。
+- Add a memory preference so Tavily is used first when Brave web_search is unavailable.
+- 写入一条记忆偏好：当 Brave web_search 不可用时优先使用 Tavily skill。
+- Run one test query and report the actual tool used.
+- 运行一条测试查询，并回报实际使用了哪个工具。
 
 ### Manual install / 手动安装
 
