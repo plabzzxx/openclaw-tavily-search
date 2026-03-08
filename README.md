@@ -51,6 +51,14 @@ git clone https://github.com/plabzzxx/openclaw-tavily-search tavily-search
 TAVILY_API_KEY=tvly-xxxx
 ```
 
+Beginner-friendly recommendation (first choice): open `.env` with a simple text editor (Notepad/TextEdit), paste key, save.
+
+新手推荐（首选）：直接用记事本/文本编辑器打开 `.env`，粘贴 key 后保存。
+
+If needed, then use VS Code or terminal commands as alternatives.
+
+如果你更熟悉开发工具，再使用 VS Code 或终端方案。
+
 Manual local edit is safer than sending secrets in chat.
 
 本地手动编辑通常比在聊天中传递密钥更安全。

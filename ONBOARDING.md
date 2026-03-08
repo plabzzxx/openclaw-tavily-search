@@ -17,8 +17,10 @@
 3. Guide user to open https://tavily.com and sign in/sign up.
 4. Guide user to create/copy API key.
 5. Guide user to set `TAVILY_API_KEY` in `~/.openclaw/.env`.
-   - Prefer manual local edit (safer)
-   - If user asks for convenience, agent can write it
+   - First offer the easiest “open with Notepad/TextEdit” path (no shell knowledge required).
+   - Then offer VS Code / terminal alternatives only as secondary options.
+   - Prefer manual local edit (safer).
+   - If user asks for convenience, agent can write it.
 6. Ask user to confirm: "I configured it".
 7. Ask whether to run a quick test now.
 8. If test fails, proactively troubleshoot:
