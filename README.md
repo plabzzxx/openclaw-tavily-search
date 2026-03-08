@@ -13,12 +13,12 @@ Tell your OpenClaw agent:
 把下面这句话直接发给你的 OpenClaw：
 
 ```text
-Please install the skill from this folder: skills/tavily-search
+Please install this skill from GitHub: https://github.com/plabzzxx/openclaw-tavily-search
 ```
 
-For manual copy/migration, copy `skills/tavily-search` to another OpenClaw workspace.
+For manual copy/migration, copy this repository folder into your OpenClaw workspace skills directory.
 
-如果你要手动迁移，直接复制 `skills/tavily-search` 文件夹到目标 OpenClaw workspace 即可。
+如果你要手动迁移，直接把这个仓库复制到目标 OpenClaw 的 skills 目录即可。
 
 ---
 
@@ -90,19 +90,19 @@ Advanced workflows use `extract / crawl / map` when you need structured site int
 
 ```bash
 # Search with brave-like output
-python3 scripts/tavily_search.py search --query "OpenClaw" --max-results 5 --format brave
+node scripts/tavily_search.mjs search --query "OpenClaw" --max-results 5 --format brave
 
 # Search with domain include/exclude
-python3 scripts/tavily_search.py search --query "周大福" \
+node scripts/tavily_search.mjs search --query "周大福" \
   --include-domains ctf.com.cn,ctfmall.com,chowtaifook.com \
   --exclude-domains facebook.com,weibo.com --format brave
 
 # Extract content from URLs
-python3 scripts/tavily_search.py extract --urls https://docs.openclaw.ai --content-format markdown --format md
+node scripts/tavily_search.mjs extract --urls https://docs.openclaw.ai --content-format markdown --format md
 
 # Crawl / Map
-python3 scripts/tavily_search.py crawl --url docs.tavily.com --max-depth 2 --limit 30 --format md
-python3 scripts/tavily_search.py map --url docs.openclaw.ai --max-depth 2 --limit 40 --format md
+node scripts/tavily_search.mjs crawl --url docs.tavily.com --max-depth 2 --limit 30 --format md
+node scripts/tavily_search.mjs map --url docs.openclaw.ai --max-depth 2 --limit 40 --format md
 ```
 
 ---

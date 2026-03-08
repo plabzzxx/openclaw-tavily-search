@@ -5,7 +5,7 @@ description: "Tavily-powered web toolkit for OpenClaw (search/extract/crawl/map)
 
 # Tavily Search Toolkit (V2)
 
-This skill provides a single Python CLI with subcommands:
+This skill provides a single Node CLI with subcommands:
 
 - `search` — web search with filters and multiple output formats
 - `extract` — fetch clean content from one or more URLs
@@ -23,26 +23,26 @@ Set `TAVILY_API_KEY` via one of:
 
 ```bash
 # 1) Search (Brave-like structure)
-python3 {baseDir}/scripts/tavily_search.py search \
+node {baseDir}/scripts/tavily_search.mjs search \
   --query "OpenClaw multi-agent" --max-results 5 --format brave
 
 # 2) Search with domain filters
-python3 {baseDir}/scripts/tavily_search.py search \
+node {baseDir}/scripts/tavily_search.mjs search \
   --query "周大福" \
   --include-domains ctf.com.cn,ctfmall.com,chowtaifook.com \
   --format brave
 
 # 3) Extract specific URLs
-python3 {baseDir}/scripts/tavily_search.py extract \
+node {baseDir}/scripts/tavily_search.mjs extract \
   --urls https://docs.openclaw.ai,https://docs.tavily.com \
   --content-format markdown --format md
 
 # 4) Crawl docs site
-python3 {baseDir}/scripts/tavily_search.py crawl \
+node {baseDir}/scripts/tavily_search.mjs crawl \
   --url docs.tavily.com --max-depth 2 --limit 30 --format md
 
 # 5) Map a site structure
-python3 {baseDir}/scripts/tavily_search.py map \
+node {baseDir}/scripts/tavily_search.mjs map \
   --url docs.openclaw.ai --max-depth 2 --limit 40 --format md
 ```
 
