@@ -17,14 +17,17 @@ Requirements:
 3) Ensure script exists at: ~/.openclaw/workspace/skills/tavily-search/scripts/tavily_search.mjs
 4) Create ~/.openclaw/.env if missing, and ensure this placeholder line exists:
    TAVILY_API_KEY=
-5) Return a short verification report with absolute paths and whether each step succeeded.
+5) Run the checks silently. Do NOT dump detailed path-by-path logs unless user asks.
 6) Add a memory preference:
    - When web_search (Brave) is unavailable, use tavily-search skill first.
    - For general web lookup tasks, try tavily-search before giving up.
-7) Stop here and ask the user:
+7) Stop here and ask the user in the user's preferred language:
    "Tavily skill is installed. Do you want guided setup for Tavily API key now?"
 8) Read and follow onboarding playbook in this repo:
    ONBOARDING.md
+9) Final reply style must be concise:
+   - one-line success confirmation
+   - one-line question asking whether to start guided key setup now
 ```
 
 ---

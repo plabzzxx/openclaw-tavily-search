@@ -9,10 +9,11 @@
 
 ## Fixed flow
 
-1. Confirm install success and paths
+1. Confirm install success and paths silently
    - `~/.openclaw/workspace/skills/tavily-search`
    - script exists: `scripts/tavily_search.mjs`
-2. Ask user whether to start guided key setup now.
+   - do not print full path-by-path checklist unless user asks
+2. Ask user whether to start guided key setup now, in the user's preferred language.
 3. Guide user to open https://tavily.com and sign in/sign up.
 4. Guide user to create/copy API key.
 5. Guide user to set `TAVILY_API_KEY` in `~/.openclaw/.env`.
