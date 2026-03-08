@@ -1,6 +1,6 @@
 ---
 name: tavily-search
-description: "Tavily-powered web toolkit for OpenClaw (search/extract/crawl/map). Use when Brave web_search is unavailable or when domain filtering/deeper website discovery is needed."
+description: "一键让 OpenClaw 实时联网（Tavily，含免费额度）。One-step install + guided key setup. Guide: github.com/plabzzxx/openclaw-tavily-search"
 ---
 
 # Tavily Search Toolkit (V2)
