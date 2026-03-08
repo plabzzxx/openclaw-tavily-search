@@ -26,9 +26,18 @@ Requirements:
 5) Return a short verification report with absolute paths and whether each step succeeded.
 ```
 
-This avoids accidental installs into `.agents/...` and keeps the skill in the standard workspace location.
+What this one-shot prompt does:
 
-这能避免被装进 `.agents/...`，确保技能位于标准 workspace 路径。
+这个一键提示词会做这些事情：
+
+- Install the skill into the correct workspace path (not `.agents`).
+- 把技能安装到正确的 workspace 路径（不会装到 `.agents`）。
+- Ensure the main script file exists and is executable.
+- 确认主脚本存在且可执行。
+- Create `~/.openclaw/.env` if missing and add `TAVILY_API_KEY=` placeholder.
+- 如果缺少 `~/.openclaw/.env`，会创建并写入 `TAVILY_API_KEY=` 占位符。
+- Return a short verification report so beginners can see exactly what changed.
+- 返回简短验证报告，让新手清楚看到改了哪些路径和步骤。
 
 ### Manual install / 手动安装
 
