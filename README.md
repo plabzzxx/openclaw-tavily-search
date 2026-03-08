@@ -4,9 +4,9 @@ A practical Tavily skill for OpenClaw with **search / extract / crawl / map** in
 
 一个面向 OpenClaw 的 Tavily 实用技能包，统一支持 **search / extract / crawl / map**。
 
-Only **2 steps** to get started: fast and beginner-friendly.
+Only **1 step** to start: send one prompt to OpenClaw, then follow guided onboarding.
 
-只要 **2 个步骤**即可完成：简单、快捷、新手友好。
+只要 **1 步**就能开始：把提示词发给 OpenClaw，后续按引导完成配置。
 
 ---
 
@@ -31,7 +31,8 @@ Requirements:
 6) Add a memory preference:
    - When web_search (Brave) is unavailable, use tavily-search skill first.
    - For general web lookup tasks, try tavily-search before giving up.
-7) Run one test query and report which tool was used.
+7) Stop here and ask the user:
+   "Tavily skill is installed. Do you want guided setup for Tavily API key now?"
 ```
 
 What this one-shot prompt does:
@@ -48,8 +49,8 @@ What this one-shot prompt does:
 - 返回简短验证报告，让新手清楚看到改了哪些路径和步骤。
 - Add a memory preference so Tavily is used first when Brave web_search is unavailable.
 - 写入一条记忆偏好：当 Brave web_search 不可用时优先使用 Tavily skill。
-- Run one test query and report the actual tool used.
-- 运行一条测试查询，并回报实际使用了哪个工具。
+- Stop after install and ask whether the user wants guided Tavily API key setup.
+- 安装完成后先停下，询问用户是否需要引导配置 Tavily API key。
 
 ### Manual install / 手动安装
 
@@ -63,25 +64,37 @@ git clone https://github.com/plabzzxx/openclaw-tavily-search tavily-search
 
 ## Step 2: Setup API Key / 配置 API Key
 
-Step 1: Get a Tavily API key from the official website: https://tavily.com
+OpenClaw can guide this step interactively after installation.
 
-第 1 步：去 Tavily 官网申请 API Key：https://tavily.com
+安装完成后，OpenClaw 会通过自然语言引导你完成这一步。
 
-Step 2: Put your key in `~/.openclaw/.env`:
+Recommended guided flow / 推荐引导流程：
 
-第 2 步：把 key 写进 `~/.openclaw/.env`：
+1) Open https://tavily.com and sign up / sign in.
+
+1）打开 https://tavily.com ，注册或登录账号。
+
+2) Create/copy your Tavily API key.
+
+2）创建并复制 Tavily API key。
+
+3) Choose one of the two setup methods:
+
+3）二选一完成配置：
+
+- **Safer (recommended):** paste key manually into `~/.openclaw/.env`
+- **更安全（推荐）：** 手动写入 `~/.openclaw/.env`
 
 ```env
 TAVILY_API_KEY=tvly-xxxx
 ```
 
-For convenience, your agent can create `.env` + placeholder for you and return the file path.
+- **Convenient:** send key to OpenClaw and let it write for you
+- **更方便：** 直接把 key 发给 OpenClaw 让它代填
 
-为了新手友好，你也可以让 Agent 先帮你创建 `.env` 和占位符并回报文件路径。
-
-You can also send your key directly to the agent and let it fill it, but manual local edit is safer.
-
-你也可以直接把 key 发给 Agent 让它代填，但本地手动编辑更安全。
+> Manual local edit is safer than sharing secrets in chat.
+>
+> 本地手动编辑通常比在聊天中传递密钥更安全。
 
 ---
 
