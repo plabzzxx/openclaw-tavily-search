@@ -8,17 +8,35 @@ A practical Tavily skill for OpenClaw with **search / extract / crawl / map** in
 
 ## Install / 安装
 
-Tell your OpenClaw agent:
+### Recommended one-shot prompt for beginners / 新手推荐一键提示词
 
-把下面这句话直接发给你的 OpenClaw：
+Send this to your OpenClaw agent:
+
+把下面整段发给你的 OpenClaw：
 
 ```text
-Please install this skill from GitHub: https://github.com/plabzzxx/openclaw-tavily-search
+Install the Tavily Search skill from GitHub into my OpenClaw workspace skills directory (NOT .agents).
+
+Requirements:
+1) Target directory must be: ~/.openclaw/workspace/skills/tavily-search
+2) Clone source: https://github.com/plabzzxx/openclaw-tavily-search
+3) Ensure script exists at: ~/.openclaw/workspace/skills/tavily-search/scripts/tavily_search.mjs
+4) Create ~/.openclaw/.env if missing, and ensure this placeholder line exists:
+   TAVILY_API_KEY=
+5) Return a short verification report with absolute paths and whether each step succeeded.
 ```
 
-For manual copy/migration, copy this repository folder into your OpenClaw workspace skills directory.
+This avoids accidental installs into `.agents/...` and keeps the skill in the standard workspace location.
 
-如果你要手动迁移，直接把这个仓库复制到目标 OpenClaw 的 skills 目录即可。
+这能避免被装进 `.agents/...`，确保技能位于标准 workspace 路径。
+
+### Manual install / 手动安装
+
+```bash
+mkdir -p ~/.openclaw/workspace/skills
+cd ~/.openclaw/workspace/skills
+git clone https://github.com/plabzzxx/openclaw-tavily-search tavily-search
+```
 
 ---
 
@@ -36,9 +54,13 @@ Step 2: Put your key in `~/.openclaw/.env`:
 TAVILY_API_KEY=tvly-xxxx
 ```
 
-You can also send your key to your agent and let it write config for you, but this is less secure.
+For convenience, your agent can create `.env` + placeholder for you and return the file path.
 
-你也可以把 key 发给 Agent 让它代填，但安全性更低，不推荐。
+为了新手友好，你也可以让 Agent 先帮你创建 `.env` 和占位符并回报文件路径。
+
+You can also send your key directly to the agent and let it fill it, but manual local edit is safer.
+
+你也可以直接把 key 发给 Agent 让它代填，但本地手动编辑更安全。
 
 ---
 
