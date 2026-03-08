@@ -1,0 +1,59 @@
+---
+name: tavily-search
+description: "Tavily-powered web toolkit for OpenClaw (search/extract/crawl/map). Use when Brave web_search is unavailable or when domain filtering/deeper website discovery is needed."
+---
+
+# Tavily Search Toolkit (V2)
+
+This skill provides a single Python CLI with subcommands:
+
+- `search` — web search with filters and multiple output formats
+- `extract` — fetch clean content from one or more URLs
+- `crawl` — crawl a site with extraction controls
+- `map` — discover and map site URLs
+
+## Requirements
+
+Set `TAVILY_API_KEY` via one of:
+
+- env var: `TAVILY_API_KEY=...`
+- `~/.openclaw/.env` line: `TAVILY_API_KEY=...`
+
+## Quick examples
+
+```bash
+# 1) Search (Brave-like structure)
+python3 {baseDir}/scripts/tavily_search.py search \
+  --query "OpenClaw multi-agent" --max-results 5 --format brave
+
+# 2) Search with domain filters
+python3 {baseDir}/scripts/tavily_search.py search \
+  --query "周大福" \
+  --include-domains ctf.com.cn,ctfmall.com,chowtaifook.com \
+  --format brave
+
+# 3) Extract specific URLs
+python3 {baseDir}/scripts/tavily_search.py extract \
+  --urls https://docs.openclaw.ai,https://docs.tavily.com \
+  --content-format markdown --format md
+
+# 4) Crawl docs site
+python3 {baseDir}/scripts/tavily_search.py crawl \
+  --url docs.tavily.com --max-depth 2 --limit 30 --format md
+
+# 5) Map a site structure
+python3 {baseDir}/scripts/tavily_search.py map \
+  --url docs.openclaw.ai --max-depth 2 --limit 40 --format md
+```
+
+## Proxy controls
+
+- Inherit system proxy env by default (`HTTP_PROXY` / `HTTPS_PROXY`)
+- Force proxy: `--proxy http://127.0.0.1:7890`
+- Disable proxy: `--no-proxy`
+
+## Notes
+
+- Keep `max-results` small (3–5) for chat tasks.
+- Use `search --format brave` for stable downstream parsing.
+- Use `extract/crawl/map` only when search snippets are insufficient.
