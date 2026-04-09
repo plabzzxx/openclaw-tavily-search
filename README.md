@@ -1,3 +1,5 @@
+# openclaw已经内置了这个功能，本仓库将不再更新
+
 # Tavily Search Toolkit for OpenClaw
 
 Make OpenClaw web-connected in real time (with a practical free-tier path via Tavily), in one install.
